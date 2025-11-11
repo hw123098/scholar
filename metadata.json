@@ -1,0 +1,5 @@
+{
+  "name": "部署指南",
+  "description": "一个简单的Web应用，用于解释如何将通过AI生成的React项目部署到云端托管平台。",
+  "requestFramePermissions": []
+}
