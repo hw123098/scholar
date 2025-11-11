@@ -57,9 +57,9 @@ const GraphPanel: React.FC<GraphPanelProps> = ({ graphData }) => {
       .force("charge", d3.forceManyBody().strength(-400))
       .force("center", d3.forceCenter(width / 2, height / 2))
       // Fix for "Expected 1 arguments, but got 0" error. This can be caused by d3 version/typing mismatches.
-      // Passing the coordinate directly to the constructor is a more robust approach.
-      .force("x", d3.forceX(width / 2).strength(0.05))
-      .force("y", d3.forceY(height / 2).strength(0.05));
+      // Using a parameterless constructor and setter method is more robust across d3 versions.
+      .force("x", d3.forceX().x(width / 2).strength(0.05))
+      .force("y", d3.forceY().y(height / 2).strength(0.05));
     
     simulationRef.current = simulation;
 
